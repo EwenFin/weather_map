@@ -5,9 +5,10 @@ var app = function(){
   var forecastButton = document.querySelector("#forecast")
   mainMap.addClickEvent();
   forecastButton.addEventListener("click", function(){
-    var latitude = mainMap.marker.getPosition().lat();
-    var longitude = mainMap.marker.getPosition().lng();
-    console.log(latitude, longitude)
+    var latitude = localStorage.getItem("latitude")
+    var longitude = localStorage.getItem("longitude")
+    var url = "api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude
+    var forecast = new Forecast(url)
 
   })
 

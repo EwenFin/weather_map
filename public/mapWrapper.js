@@ -19,6 +19,8 @@ MapWrapper.prototype ={
     google.maps.event.addListener(this.googleMap, 'click', function(event){
       var latitude = event.latLng.lat()
       var longitude = event.latLng.lng() 
+      localStorage.setItem("latitude", latitude)
+      localStorage.setItem("longitude", longitude)
       this.addMarker({lat: latitude, lng: longitude});
     }.bind(this));
   }
