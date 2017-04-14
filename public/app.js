@@ -7,9 +7,9 @@ var app = function(){
   forecastButton.addEventListener("click", function(){
     var latitude = localStorage.getItem("latitude")
     var longitude = localStorage.getItem("longitude")
-    var url = "api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude
+    var url = "http://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&APPID=f66376ebcb0af19199eb5e28d449aaf9"
     var forecast = new Forecast(url)
-
+    console.log(forecast.getData())
   })
 
 }

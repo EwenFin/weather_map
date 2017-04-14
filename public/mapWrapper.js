@@ -22,6 +22,7 @@ MapWrapper.prototype ={
       localStorage.setItem("latitude", latitude)
       localStorage.setItem("longitude", longitude)
       this.addMarker({lat: latitude, lng: longitude});
+      console.log(latitude, longitude)
     }.bind(this));
   }
 }
