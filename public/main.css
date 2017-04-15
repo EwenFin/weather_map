@@ -11,3 +11,8 @@
   align-content: center;
   margin: auto;
 }
+
+#weather-display{
+  width: 500px;
+  height: 200px;
+}

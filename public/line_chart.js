@@ -9,7 +9,12 @@ var LineChart = function(container, title, data){
         title: {
             text: title
         },
-        series: data,
+        plotOptions: {
+         series: {
+             allowPointSelect: true
+            }
+        },
+        series: [{data: [] }],
         yAxis: {
             title: {
                 text: 'temperature'
