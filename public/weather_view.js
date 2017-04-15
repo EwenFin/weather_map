@@ -39,9 +39,7 @@ WeatherView.prototype = {
       weatherSeries.push([times[i], temperatures[i]]);
     };
     console.log(weatherSeries) 
-
-    var chart = new LineChart(chartContainer, chartTitle, weatherSeries
-      )
+    new LineChart(chartContainer, chartTitle, temperatures, times)
 
 
     
