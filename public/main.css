@@ -2,17 +2,18 @@
   margin: auto;
   align-content: center;
   height: 400px;
-  width: 400px;
+  width: 800px;
   border: 1px solid black;
 
-}
-
-.h1{
-  align-content: center;
-  margin: auto;
 }
 
 #weather-display{
   width: 800px;
   height: 300px;
+}
+
+#all{
+  align-content: center;
+  margin: auto;
+
 }

@@ -7,10 +7,12 @@ WeatherView.prototype = {
   render: function(weather){
     var chartContainer1 = document.querySelector("#temperature-display");
     var chartContainer2 = document.querySelector("#windspeed-display");
+    var chartContainer3 = document.querySelector("#cloudcover-display")
     // var latitude = + localStorage.getItem("latitude");
     // var longitude = + localStorage.getItem("longitude");
     var chartTitleTemp = "Temperature"
     var chartTitleWindspeed = "Wind Speeds"
+    var chartTitleCloudCover = "Cloud Cover"
     var temperatures = [];
     var times = [];
     var weatherIconId = [];
@@ -44,15 +46,22 @@ WeatherView.prototype = {
     
     //Temperatures not appearing on the graph...
 
-    var windSpeedSeries = []
+    var windSpeedSeries = [];
     for(var i = 0; i < times.length; i++){
       windSpeedSeries.push([ times[i], + windSpeed[i]]);
     };
 
-    console.log(windSpeedSeries)
+    var cloudCoverSeries = [];
+    for(var i = 0; i < times.length; i++){
+      cloudCoverSeries.push([ times[i], + cloudCover[i]]);
+    };
+
+
+  
 
     new LineChart(chartContainer1, chartTitleTemp, temperatureSeries, times)
     new LineChart(chartContainer2, chartTitleWindspeed, windSpeedSeries, times)
+    new LineChart(chartContainer3, chartTitleCloudCover, cloudCoverSeries, times)
 
 
     
