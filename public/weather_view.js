@@ -5,10 +5,12 @@ var WeatherView = function(detailsElement){
 WeatherView.prototype = {
 
   render: function(weather){
-    var chartContainer = document.querySelector("#weather-display");
-    var latitude = + localStorage.getItem("latitude")
-    var longitude = + localStorage.getItem("longitude")
-    var chartTitle = "Temperatures at " + latitude.toFixed(2) + ", " + longitude.toFixed(2);
+    var chartContainer1 = document.querySelector("#temperature-display");
+    var chartContainer2 = document.querySelector("#windspeed-display");
+    var latitude = + localStorage.getItem("latitude");
+    var longitude = + localStorage.getItem("longitude");
+    var chartTitleTemp = "Temperatures at " + latitude.toFixed(2) + ", " + longitude.toFixed(2);
+    var chartTitleWindspeed = "Wind Speeds at " + latitude.toFixed(2) + ", " + longitude.toFixed(2);
     var temperatures = [];
     var times = [];
     var weatherIconId = [];
@@ -24,6 +26,7 @@ WeatherView.prototype = {
       windSpeed.push(time.wind.speed + "m/s");
       windDirection.push(time.wind.deg);
       // rainfall.push(time.rain.3h + "mm")
+      //damn 3h ruining my code...
       
     })
     console.log("temperature", temperatures);
@@ -34,12 +37,20 @@ WeatherView.prototype = {
     console.log("clouds", cloudCover);
     console.log("windDirection", windDirection);
 
-    var weatherSeries = [];
+    var temperatureSeries = [];
     for(var i = 0; i < times.length; i++){
-      weatherSeries.push([times[i], temperatures[i]]);
+      temperatureSeries.push([ times[i], + temperatures[i]]);
     };
     console.log(weatherSeries) 
-    new LineChart(chartContainer, chartTitle, temperatures, times)
+    //Temperatures not appearing on the graph...
+
+    var windSpeedSeries = []
+    for(var i = 0; i < times.length; i++){
+      windspeedSeries.push([ times[i], + temperatures[i]]);
+    };
+
+    new LineChart(chartContainer1, chartTitleTemp, temperatureSeries, times)
+    new LineChart(chartContainer2, chartTitleWindspeed, windSpeedSeries, times)
 
 
     

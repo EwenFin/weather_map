@@ -3,7 +3,7 @@ var app = function(){
   var containerDiv = document.querySelector("#main-map");
   var mainMap = new MapWrapper(containerDiv, center, 5);
   var forecastButton = document.querySelector("#forecast")
-  var weatherView = new WeatherView(document.querySelector('#weather-display'));
+  var weatherView = new WeatherView(document.querySelector('#temperature-display'));
   mainMap.addClickEvent();
   forecastButton.addEventListener("click", function(){
     var latitude = localStorage.getItem("latitude");

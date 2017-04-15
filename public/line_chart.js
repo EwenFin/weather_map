@@ -9,11 +9,10 @@ var LineChart = function(container, title, temperatures, times){
         title: {
             text: title
         },
-        series: [
-        {data: temperatures }],
         yAxis: {
             title: {
-                text: 'temperature'
+                text: "temperatures"
+
             }
         },  
         xAxis:{
@@ -22,8 +21,13 @@ var LineChart = function(container, title, temperatures, times){
 
                 text: 'time'
             }
-        }
+        },
+        series:[ 
+        {data: temperatures }],
+
     })
 }
+
+
 
 
