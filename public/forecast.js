@@ -4,7 +4,7 @@ var Forecast = function(url){
 }
 
 Forecast.prototype = {
-  getData: function(){
+  getData: function(callback){
     var request = new XMLHttpRequest();
     request.open("GET", this.url);
     request.onload = function(){
@@ -12,6 +12,7 @@ Forecast.prototype = {
         var jsonString = request.responseText;
         this.weatherDetails = JSON.parse(jsonString);
         console.log(this.weatherDetails)
+        callback(this.weatherDetails)
       }
     }.bind(this);
     request.send();
