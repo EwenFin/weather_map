@@ -1,4 +1,4 @@
-var LineChart = function(container, title, data){
+var LineChart = function(container, title, weatherData){
 
     this.chart =  new Highcharts.chart({
 
@@ -14,7 +14,8 @@ var LineChart = function(container, title, data){
              allowPointSelect: true
             }
         },
-        series: [{data: [] }],
+        series: [
+        {data: [weatherData] }],
         yAxis: {
             title: {
                 text: 'temperature'

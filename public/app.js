@@ -14,7 +14,6 @@ var app = function(){
       console.log(weather)
     })
 
-    console.log(forecast);
   })
 
 }
